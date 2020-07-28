@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import * as fromApp from '../store/app.reducer';
+import { Store } from '@ngrx/store';
+import { LoginStart } from './store/auth.actions';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -9,8 +13,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AuthComponent implements OnInit {
 
   loginForm: FormGroup;
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private store: Store<fromApp.AppState>) { }
 
   private initForm(): void {
     this.loginForm = new FormGroup(
@@ -23,10 +28,16 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.subscription = this.store.select('auth').subscribe(authState => {
+      console.log(authState);
+    });
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+
+    this.store.dispatch(new LoginStart({email, password}));
   }
 
   onSignup() {

@@ -8,6 +8,9 @@ import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
+import * as fromApp from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
