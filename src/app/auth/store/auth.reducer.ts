@@ -1,5 +1,5 @@
 import { User } from '../../shared/user.model';
-import { AuthActions, LOGIN_START, AUTHENTICATION_SUCCESS, AUTHENTICATION_FAIL, SIGNUP_START, AUTO_LOGIN, LOGOUT } from './auth.actions';
+import * as AuthActions from './auth.actions';
 
 export interface State {
     user: User;
@@ -14,30 +14,42 @@ const initialState: State = {
 };
 
 
-export function authReducer(state: State = initialState, action: AuthActions): State {
+export function authReducer(state: State = initialState, action: AuthActions.AuthActions): State {
     switch (action.type) {
-        case LOGIN_START:
-        case SIGNUP_START:
+        case AuthActions.LOGIN_START:
+        case  AuthActions.SIGNUP_START:
         return {
             ...state,
             authError: null,
             loading: true
         };
-        case AUTHENTICATION_SUCCESS:
+        case  AuthActions.AUTHENTICATION_SUCCESS:
+            const newUser = new User(
+                action.payload.email,
+                action.payload.localId,
+                action.payload.idToken,
+                action.payload.expirationDate
+            );
             return {
                 ...state,
+                user: newUser,
+                authError: null,
+                loading: false
             };
-        case AUTHENTICATION_FAIL:
+        case  AuthActions.AUTHENTICATION_FAIL:
             return {
                 ...state,
+                authError: action.payload,
+                loading: false
             };
-        case AUTO_LOGIN:
+        case  AuthActions.AUTO_LOGIN:
             return {
                 ...state
             };
-        case LOGOUT:
+        case  AuthActions.LOGOUT:
             return {
-                ...state
+                ...state,
+                user: null
             };
         }
 }
