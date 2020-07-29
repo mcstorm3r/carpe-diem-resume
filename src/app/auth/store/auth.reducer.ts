@@ -9,7 +9,7 @@ export interface State {
 
 const initialState: State = {
     user: null,
-    authError: '',
+    authError: null,
     loading: false
 };
 
@@ -42,14 +42,12 @@ export function authReducer(state: State = initialState, action: AuthActions.Aut
                 authError: action.payload,
                 loading: false
             };
-        case  AuthActions.AUTO_LOGIN:
-            return {
-                ...state
-            };
         case  AuthActions.LOGOUT:
             return {
                 ...state,
                 user: null
             };
+        default:
+            return state;
         }
 }

@@ -20,12 +20,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromApp.AppState>, private router: Router) { }
 
   ngOnInit(): void {
-    this.subscription = this.store.select('auth').pipe(map(authState => authState.user))
-    .subscribe(user => {
-      if (user) {
-        this.isAuthenticated = true;
-        this.router.navigate(['/resumes']);
-      }
+    this.subscription = this.store.select('auth').subscribe(authState => {
+        this.isAuthenticated = !!authState.user;
     });
   }
 

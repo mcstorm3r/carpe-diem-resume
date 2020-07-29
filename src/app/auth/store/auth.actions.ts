@@ -16,6 +16,7 @@ export class AuthenticationSuccess implements Action {
         idToken: string,
         expirationDate: Date,
         localId: string;
+        redirect: boolean;
     }) {}
 }
 
