@@ -14,14 +14,16 @@ export class AuthenticationSuccess implements Action {
     constructor(public payload: {
         email: string,
         idToken: string,
-        refreshToken: string,
-        expiresIn: string,
+        expirationDate: Date,
         localId: string;
+        redirect: boolean;
     }) {}
 }
 
 export class AuthenticationFail implements Action {
     readonly type = AUTHENTICATION_FAIL;
+
+    constructor(public payload: string) {}
 }
 
 export class SignupStart implements Action {
