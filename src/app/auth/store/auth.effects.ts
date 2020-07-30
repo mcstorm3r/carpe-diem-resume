@@ -1,3 +1,4 @@
+import { LoggingService } from './../../shared/logging.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import * as AuthActions from './auth.actions';
 import { switchMap, tap, map, catchError } from 'rxjs/operators';
@@ -23,7 +24,8 @@ export class AuthEffects {
         private actions$: Actions,
         private http: HttpClient,
         private router: Router,
-        private authService: AuthService) {}
+        private authService: AuthService,
+        private loggingService: LoggingService) {}
 
     @Effect()
     authLogin = this.actions$.pipe(
@@ -120,9 +122,18 @@ export class AuthEffects {
         tap((authState: AuthActions.AuthenticationSuccess) => {
             if (authState.payload.redirect) {
                 this.router.navigate(['/resumes']);
+                this.loggingService.showSuccess('Success!');
             }
         })
     );
+
+    @Effect({dispatch: false})
+    authFail = this.actions$.pipe(
+      ofType(AuthActions.AUTHENTICATION_FAIL),
+      tap((authState: AuthActions.AuthenticationFail) => {
+        this.loggingService.showError(authState.payload);
+      })
+    )
 
     private handleAuthentication = (responseData: AuthResponseData) => {
         const expirationDate = new Date(new Date().getTime() + +responseData.expiresIn * 1000);
@@ -146,9 +157,8 @@ export class AuthEffects {
 
     private handleError = (error: HttpErrorResponse) => {
         let errorMessage = 'Unknown error!';
-        console.log(error);
 
-        if (!error.error || error.error.error) {
+        if (!error.error) {
             return of(new AuthActions.AuthenticationFail(errorMessage));
         }
 
@@ -166,7 +176,7 @@ export class AuthEffects {
             case 'TOO_MANY_ATTEMPTS_TRY_LATER':
                 errorMessage = 'We have blocked all requests from this device due to unusual activity. Try again later.';
         }
-        console.log(errorMessage);
+
         return of(new AuthActions.AuthenticationFail(errorMessage));
     }
 
