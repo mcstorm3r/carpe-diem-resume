@@ -1,21 +1,21 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default mat-elevation-z6">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
                 <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
             </button>
-            <a routerLink="/" class="navbar-brand"> Carpe Diem </a>
+            <a routerLink="/" class="navbar-brand"> <b>Carpe Diem</b> </a>
         </div>
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
         <ul class="nav navbar-nav">
             <li routerLinkActive="active">
-                <a routerLink="/resumes">Resumes</a>
+                <a routerLink="/resumes"><b>Resumes</b></a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a routerLink="/auth" *ngIf="!isAuthenticated">Login</a>
-                <a style="cursor: pointer;" (click)="logout()" *ngIf="isAuthenticated">Logout</a>
+                <a routerLink="/auth" *ngIf="!isAuthenticated"> <b> Login</b></a>
+                <a style="cursor: pointer;" (click)="logout()" *ngIf="isAuthenticated"><b>Logout</b></a>
             </li>
         </ul>
     </div>
