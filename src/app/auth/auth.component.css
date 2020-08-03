@@ -1,2 +1,11 @@
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.col-padding {
+    padding: 2em 3em;
+    margin: 2em 0;
+}
 

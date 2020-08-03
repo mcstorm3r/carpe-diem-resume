@@ -1,4 +1,12 @@
-b {
+b{
   color: #7D67D1;
+}
+
+ b:hover {
+  color: #3c10eb;
+}
+
+.navbar-full {
+  width: 100%;
 }
 

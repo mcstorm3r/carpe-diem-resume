@@ -1,52 +1,59 @@
-<div class="container" style="display: flex; justify-content: center; margin-top: 10em;">
-    <div class="row" >
-        <div class="col-xs-12 mat-elevation-z6" style="padding: 2em;" >
-            <mat-spinner
-            color="primary"
-            *ngIf="loading"
-            ></mat-spinner>
-            <form (ngSubmit)="onSubmit()"
-            [formGroup]="loginForm"
-            #f="ngForm"
-            *ngIf="!loading">
-              <div class="example-container">
-                <mat-form-field appearance="outline">
-                  <mat-label>Email</mat-label>
-                  <input
-                  type="email"
-                  matInput
-                  placeholder="dum@gmail.com"
-                  formControlName="email"
-                  required>
-                  <mat-error>You must enter a valid email adress</mat-error>
-                </mat-form-field>
-              </div>
-              <div class="example-container">
-                <mat-form-field appearance="outline">
-                  <mat-label>Password</mat-label>
-                  <input
-                  type="password"
-                  matInput
-                  placeholder="Password"
-                  formControlName="password"
-                  required>
-                  <mat-error>You must enter a valid password</mat-error>
-                </mat-form-field>
-              </div>
-              <div class="pull-right" style="margin-top: 1em;">
-                  <button
-                  class="btn btn-success"
-                  type="button"
-                  (click)="onSignup()"
-                  [disabled]="!loginForm.valid"
-                  > Signup </button> |
-                  <button
-                  class="btn btn-primary"
-                  type="submit"
-                  [disabled]="!loginForm.valid"
-                  > Login</button>
-              </div>
-            </form>
+<div class="container container-center">
+  <div class="row">
+    <div class="col-xs-12 mat-elevation-z6 col-padding">
+      <mat-spinner color="primary" *ngIf="loading"></mat-spinner>
+      <form
+        (ngSubmit)="onSubmit()"
+        [formGroup]="loginForm"
+        #f="ngForm"
+        *ngIf="!loading"
+      >
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="dum@gmail.com"
+              formControlName="email"
+              required
+            />
+            <mat-error>You must enter a valid email adress</mat-error>
+          </mat-form-field>
         </div>
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              required
+            />
+            <mat-error>You must enter a valid password</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="pull-right" style="margin-top: 1em;">
+          <button
+            class="btn btn-success"
+            type="button"
+            (click)="onSignup()"
+            [disabled]="!loginForm.valid"
+          >
+            Signup
+          </button>
+          |
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+
