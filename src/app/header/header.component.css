@@ -1,12 +1,13 @@
 b{
-  color: #7D67D1;
+  color: #CCC;
 }
 
  b:hover {
-  color: #3c10eb;
+  color: #7D67D1;
 }
 
-.navbar-full {
-  width: 100%;
+nav {
+  margin-bottom: 1em;
 }
+
 
