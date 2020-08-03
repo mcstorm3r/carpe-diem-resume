@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark mat-elevation-z6">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark mat-elevation-z6">
   <a class="navbar-brand" routerLink="/"><b>Carpe Diem</b></a>
   <button
     type="button"
@@ -17,14 +17,14 @@
     <ul class="navbar-nav ml-auto">
       <li class="navbar-item">
         <a
-          class="navbar-link"
+          class="nav-link"
           (click)="logout()"
           *ngIf="isAuthenticated"
           style="cursor: pointer;"
         >
           <b>Logout</b>
         </a>
-        <a class="navbar-link" routerLink="/auth" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="/auth" *ngIf="!isAuthenticated">
           <b>Login</b>
         </a>
       </li>
