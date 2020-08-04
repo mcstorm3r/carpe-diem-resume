@@ -7,57 +7,60 @@ export const SIGNUP_START = '[Auth] Signup Start';
 export const LOGOUT = '[Auth] Logout';
 export const AUTO_LOGIN = '[Auth] Auto Login';
 
-
 export class AuthenticationSuccess implements Action {
-    readonly type = AUTHENTICATION_SUCCESS;
+  readonly type = AUTHENTICATION_SUCCESS;
 
-    constructor(public payload: {
-        email: string,
-        idToken: string,
-        expirationDate: Date,
-        localId: string;
-        redirect: boolean;
-    }) {}
+  constructor(
+    public payload: {
+      email: string;
+      idToken: string;
+      expirationDate: Date;
+      localId: string;
+      redirect: boolean;
+    }
+  ) {}
 }
 
 export class AuthenticationFail implements Action {
-    readonly type = AUTHENTICATION_FAIL;
+  readonly type = AUTHENTICATION_FAIL;
 
-    constructor(public payload: string) {}
+  constructor(public payload: string) {}
 }
 
 export class SignupStart implements Action {
-    readonly type = SIGNUP_START;
+  readonly type = SIGNUP_START;
 
-    constructor(public payload: {
-        email: string,
-        password: string
-    }){}
+  constructor(
+    public payload: {
+      email: string;
+      password: string;
+    }
+  ) {}
 }
 
 export class LoginStart implements Action {
-    readonly type = LOGIN_START;
+  readonly type = LOGIN_START;
 
-    constructor(public payload: {
-        email: string,
-        password: string
-    }) {}
+  constructor(
+    public payload: {
+      email: string;
+      password: string;
+    }
+  ) {}
 }
 
 export class AutoLogin implements Action {
-    readonly type = AUTO_LOGIN;
+  readonly type = AUTO_LOGIN;
 }
 
 export class Logout implements Action {
-    readonly type = LOGOUT;
+  readonly type = LOGOUT;
 }
 
-
 export type AuthActions =
-  LoginStart
-| AuthenticationSuccess
-| AuthenticationFail
-| SignupStart
-| AutoLogin
-| Logout;
-
+  | LoginStart
+  | AuthenticationSuccess
+  | AuthenticationFail
+  | SignupStart
+  | AutoLogin
+  | Logout;

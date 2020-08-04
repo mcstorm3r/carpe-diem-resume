@@ -5,6 +5,7 @@ body,
 header,
 .view {
   height: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 740px) {
@@ -16,6 +17,25 @@ header,
   }
 }
 
+footer {
+  background-color: #222222;
+  overflow: hidden;
+}
+
+.col-md-12 p {
+  color: #d5d5d5;
+}
+
+.white-line {
+  width: 75%;
+  border-top: 1px solid #d5d5d5;
+}
+
+.btn-primary {
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
 
 .btn .fa {
   margin-left: 3px;
@@ -26,10 +46,6 @@ header,
 }
 
 
-
-.btn-white {
-  color: black !important;
-}
 
 h6 {
   line-height: 1.7;
