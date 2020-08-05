@@ -18,11 +18,12 @@ body,
 
 .additional-info-button {
   font-weight: bold;
-  color: #0000EE;
+  color: rgb(10, 125, 219);
 }
 
 .additional-info-button:hover {
   cursor: pointer;
+  color: rgb(10, 140, 247);
 }
 
 .mat-form-field {

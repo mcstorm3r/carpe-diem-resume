@@ -5,9 +5,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     MatGridListModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatExpansionModule
   ],
   exports: [
     MatTabsModule,
@@ -30,7 +34,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     MatGridListModule,
     MatDatepickerModule,
-    MatNativeDateModule
-  ]
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatExpansionModule
+  ],
 })
 export class MaterialModule {}

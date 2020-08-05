@@ -11,17 +11,19 @@
         />
         <mat-hint>Name</mat-hint>
       </mat-form-field> -->
-      <h2 class="display-4 font-weight-bold" >{{ firstname + ' ' + lastname }}</h2>
+      <h2 class="display-4 font-weight-bold">
+        {{ firstname + " " + lastname }}
+      </h2>
     </div>
     <!-- END of Name Section -->
     <!-- Personal Details Section -->
-    <div class="row">
-      <h3 class="lead font-weight-bold">Personal Details</h3>
-    </div>
     <div
       class="row mat-elevation-z6 justify-content-center"
       formGroupName="personalDetails"
     >
+      <div class="col-12">
+        <h3 class="font-weight-bold">Personal Details</h3>
+      </div>
       <!-- Job Title -->
       <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
         <mat-form-field>
@@ -104,14 +106,14 @@
             <!-- Country and City Section  -->
             <div class="row justify-content-center p-0 m-0">
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Country</mat-label>
                   <input type="text" matInput formControlName="country" />
                 </mat-form-field>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>City</mat-label>
                   <input type="text" matInput formControlName="city" />
@@ -120,14 +122,14 @@
               <!-- END of Country and City Section  -->
               <!-- Adress and Postal Code Section -->
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Address</mat-label>
                   <input type="text" matInput formControlName="address" />
                 </mat-form-field>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Postal Code</mat-label>
                   <input type="text" matInput formControlName="postalCode" />
@@ -136,7 +138,7 @@
               <!-- END of Address and Postal Cose Section -->
               <!-- Driving License and Nationality -->
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Driving License</mat-label>
                   <input
@@ -147,7 +149,7 @@
                 </mat-form-field>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Nationality</mat-label>
                   <input type="text" matInput formControlName="nationality" />
@@ -156,7 +158,7 @@
               <!-- END of Driving License and Nationality -->
               <!-- Place of Birth and Date of Birth -->
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
-                <mat-form-field >
+                <mat-form-field>
                   <br />
                   <mat-label>Place Of Birth</mat-label>
                   <input type="text" matInput formControlName="placeOfBirth" />
@@ -164,7 +166,7 @@
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
                 <mat-form-field color="primary">
-                  <br>
+                  <br />
                   <input
                     matInput
                     [matDatepicker]="picker1"
@@ -200,5 +202,51 @@
       </div>
     </div>
     <!-- End of Personal Details Section -->
+    <hr />
+    <!-- Proffesional Summary Section -->
+    <div class="row mat-elevation-z6 justify-content-center">
+      <div class="col-12">
+        <h3 class="font-weight-bold">Proffesional Summary</h3>
+      </div>
+      <div class="col-12">
+        <mat-hint
+          >Include 2-3 clear sentences about your overall experience</mat-hint
+        >
+        <mat-form-field class="full-width">
+          <mat-label>Summary</mat-label>
+          <textarea
+            rows="10"
+            matInput
+            placeholder="e.g Passionate engineer with 5+ years of experience and ..."
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- END of Proffesional Summary Section -->
+    <hr />
+    <!-- Employment History -->
+    <div class="row mat-elevation-z6 justify-content-center">
+      <div class="col-12">
+        <h3 class="font-weight-bold">Employment History</h3>
+      </div>
+      <div class="col-12">
+        <mat-hint
+        >Include your last 10 years of relevant experience and dates in this
+        section. List your most recent position first.</mat-hint>
+      </div>
+      <div class="col-12 pb-2">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="font-weight-bold">(Not specified)</mat-panel-title>
+              <mat-panel-description class="text-muted"> Aug 2020 - Aug 2020</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>Here lies the content</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <!-- END of Employment History -->
+    <hr>
   </form>
 </div>

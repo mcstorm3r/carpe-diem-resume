@@ -35,6 +35,7 @@ export class ResumeBuilderComponent implements OnInit {
   resumeForm = new FormGroup({
     name: new FormControl(null),
     personalDetails: this.personalDetails,
+    professionalSummary: new FormControl(null)
   });
 
 
