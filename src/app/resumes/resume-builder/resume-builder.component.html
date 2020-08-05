@@ -1,0 +1,204 @@
+<div class="container-fluid">
+  <form #f="ngForm" [formGroup]="resumeForm">
+    <!-- Name Section  -->
+    <div class="row justify-content-center padding">
+      <!-- <mat-form-field class="lead" style="width: auto !important;">
+        <input
+          class="text-center display-4"
+          matInput
+          type="text"
+          formControlName="name"
+        />
+        <mat-hint>Name</mat-hint>
+      </mat-form-field> -->
+      <h2 class="display-4 font-weight-bold" >{{ firstname + ' ' + lastname }}</h2>
+    </div>
+    <!-- END of Name Section -->
+    <!-- Personal Details Section -->
+    <div class="row">
+      <h3 class="lead font-weight-bold">Personal Details</h3>
+    </div>
+    <div
+      class="row mat-elevation-z6 justify-content-center"
+      formGroupName="personalDetails"
+    >
+      <!-- Job Title -->
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <mat-form-field>
+          <br />
+          <mat-label>Job Title</mat-label>
+          <input
+            type="text"
+            matInput
+            id="jobTitle"
+            formControlName="jobTitle"
+            placeholder="e.g Engineer"
+          />
+        </mat-form-field>
+      </div>
+      <!-- END of Job Title -->
+      <!-- Photo -->
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <br />
+        <div class="row">
+          <div class="material-icons photo-icon d-flex align-items-center">
+            account_box
+          </div>
+          <div class="d-flex">
+            <a href="#" class="align-self-center"> Upload photo</a>
+          </div>
+        </div>
+      </div>
+      <!-- END of Photo -->
+      <!-- First and Last Name -->
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <mat-form-field>
+          <br />
+          <input
+            type="text"
+            matInput
+            id="firstname"
+            formControlName="firstname"
+            placeholder="First Name"
+            [(ngModel)]="firstname"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <mat-form-field>
+          <br />
+          <input
+            type="text"
+            matInput
+            formControlName="lastname"
+            placeholder="Last Name"
+            [(ngModel)]="lastname"
+          />
+        </mat-form-field>
+      </div>
+      <!-- END of First and Last Name -->
+      <!-- Email and Phone -->
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <mat-form-field>
+          <br />
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            formControlName="email"
+            placeholder="dum@gmail.com"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+        <mat-form-field>
+          <br />
+          <mat-label>Phone</mat-label>
+          <input type="text" matInput formControlName="phone" />
+        </mat-form-field>
+      </div>
+      <!-- Additional Details Section  -->
+      <div class="full-width">
+        <div formGroupName="additionalDetails">
+          <div class="collapse" id="additionalDetails">
+            <!-- Country and City Section  -->
+            <div class="row justify-content-center p-0 m-0">
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Country</mat-label>
+                  <input type="text" matInput formControlName="country" />
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>City</mat-label>
+                  <input type="text" matInput formControlName="city" />
+                </mat-form-field>
+              </div>
+              <!-- END of Country and City Section  -->
+              <!-- Adress and Postal Code Section -->
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Address</mat-label>
+                  <input type="text" matInput formControlName="address" />
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Postal Code</mat-label>
+                  <input type="text" matInput formControlName="postalCode" />
+                </mat-form-field>
+              </div>
+              <!-- END of Address and Postal Cose Section -->
+              <!-- Driving License and Nationality -->
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Driving License</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    formControlName="drivingLicense"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Nationality</mat-label>
+                  <input type="text" matInput formControlName="nationality" />
+                </mat-form-field>
+              </div>
+              <!-- END of Driving License and Nationality -->
+              <!-- Place of Birth and Date of Birth -->
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Place Of Birth</mat-label>
+                  <input type="text" matInput formControlName="placeOfBirth" />
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
+                <mat-form-field color="primary">
+                  <br>
+                  <input
+                    matInput
+                    [matDatepicker]="picker1"
+                    formControlName="dateOfBirth"
+                    placeholder="Choose a Date"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <!-- END of Place of Birth and Date of Birth -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 padding">
+        <div
+          (click)="toggleAdditionalDetails()"
+          class="additional-info-button padding"
+          data-toggle="collapse"
+          data-target="#additionalDetails"
+        >
+          {{ ifAdditionalDetails ? "Hide" : "Edit" }} additional details
+          <span class="material-icons">
+            {{
+              ifAdditionalDetails ? "keyboard_arrow_up" : "keyboard_arrow_down"
+            }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- End of Personal Details Section -->
+  </form>
+</div>

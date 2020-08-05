@@ -1,0 +1,35 @@
+/* html,
+body,
+.container-fluid {
+  width: 100%;
+} */
+
+.photo-icon {
+  height: 100%;
+  font-size: 50px;
+}
+
+.padding{
+  padding-top: 2rem;
+  justify-content: center;
+  display: flex;
+}
+
+
+.additional-info-button {
+  font-weight: bold;
+  color: #0000EE;
+}
+
+.additional-info-button:hover {
+  cursor: pointer;
+}
+
+.mat-form-field {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
+

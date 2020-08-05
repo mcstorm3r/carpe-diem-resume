@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ResumeComponent } from './resumes/resume/resume.component';
+import { ResumeComponent } from './resumes/resume.component';
 import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
+import { ResumeViewerComponent } from './resumes/resume-viewer/resume-viewer.component';
+import { ResumeBuilderComponent } from './resumes/resume-builder/resume-builder.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StoreModule } from '@ngrx/store';
@@ -23,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthComponent,
     HeaderComponent,
     HomeComponent,
+    ResumeBuilderComponent,
+    ResumeViewerComponent
   ],
   imports: [
     BrowserModule,

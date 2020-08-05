@@ -22,6 +22,10 @@ footer {
   overflow: hidden;
 }
 
+h6 {
+  line-height: 1.7;
+}
+
 .col-md-12 p {
   color: #d5d5d5;
 }
@@ -36,6 +40,9 @@ footer {
   padding: 20px;
   font-weight: bold;
 }
+.btn-primary:hover {
+  color:white;
+}
 
 .btn .fa {
   margin-left: 3px;
@@ -43,12 +50,6 @@ footer {
 
 .top-nav-collapse {
   background-color: #424f95 !important;
-}
-
-
-
-h6 {
-  line-height: 1.7;
 }
 
 
