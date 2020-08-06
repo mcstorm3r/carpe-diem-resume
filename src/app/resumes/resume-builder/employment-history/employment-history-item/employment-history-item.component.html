@@ -1,0 +1,91 @@
+<div class="container-fluid d-flex align-items-center">
+  <div class="row">
+    <div class="col-12 p-0">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="font-weight-bold">
+            {{ empHistoryForm.get("jobTitle").value }}
+          </mat-panel-title>
+          <mat-panel-description class="d-flex justify-content-end">
+            {{ empHistoryForm.get("startDate").value | date }} -
+            {{ empHistoryForm.get("endDate").value | date }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- Content here -->
+        <div class="container-fluid">
+          <form #f="ngForm" [formGroup]="empHistoryForm">
+            <div class="row">
+              <!-- JOB AND EMPLOYER -->
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <mat-form-field >
+                  <br />
+                  <mat-label>Job Title</mat-label>
+                  <input type="text" matInput formControlName="jobTitle" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <mat-form-field>
+                  <br />
+                  <mat-label>Employer</mat-label>
+                  <input type="text" matInput formControlName="employer" />
+                </mat-form-field>
+              </div>
+              <!-- END of JOB AND EMPLOYER -->
+
+              <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>Start Date</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="startDate"
+                    formControlName="startDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="startDate"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #startDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>End Date</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="endDate"
+                    formControlName="endDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="endDate"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #endDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <mat-form-field>
+                  <br />
+                  <mat-label>City</mat-label>
+                  <input type="text" matInput formControlName="city" />
+                </mat-form-field>
+              </div>
+              <div class="col-12">
+                <mat-form-field>
+                  <br />
+                  <mat-label>Description</mat-label>
+                  <textarea
+                    rows="4"
+                    type="text"
+                    matInput
+                    formControlName="description"
+                    placeholder="Write something about your job there."
+                  ></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</div>

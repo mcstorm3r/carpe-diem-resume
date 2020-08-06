@@ -1,3 +1,5 @@
+import { EmploymentHistoryComponent } from './resumes/resume-builder/employment-history/employment-history.component';
+import { EmploymentHistoryItemComponent } from './resumes/resume-builder/employment-history/employment-history-item/employment-history-item.component';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     HomeComponent,
     ResumeBuilderComponent,
-    ResumeViewerComponent
+    ResumeViewerComponent,
+    EmploymentHistoryComponent,
+    EmploymentHistoryItemComponent
   ],
   imports: [
     BrowserModule,

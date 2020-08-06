@@ -1,0 +1,59 @@
+<div class="container-fluid p-2">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="font-weight-bold">Employment History</h3>
+    </div>
+    <div class="col-12 pb-2">
+      <mat-hint
+        >Include your last 10 years of relevant experience and dates in this
+        section. List your most recent position first.</mat-hint
+      >
+    </div>
+    <div class="col-12 p-0 m-0">
+      <mat-accordion cdkDropList (cdkDropListDropped)="drop($event)">
+        <div
+          class="container-fluid mb-2 "
+          *ngFor="let employmentHistory of employmentHistoryList"
+        >
+          <div class="row">
+            <div class="col-11" cdkDrag [cdkDragStartDelay]="300">
+              <div class="row">
+                <div class="mt-3 col-1 p-0 m-0" style="text-align: end;">
+                  <span class="material-icons" style="cursor: grab;">
+                    drag_indicator
+                  </span>
+                </div>
+                <div class="col-11 p-0 m-0">
+                  <div>
+                    <app-employment-history-item
+                      [employmentHistory]="employmentHistory"
+                    ></app-employment-history-item>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1 mt-2 p-1">
+              <span
+                class="material-icons"
+                style="cursor: pointer;"
+                (click)="onDelete(employmentHistory)"
+              >
+                delete_outline
+              </span>
+            </div>
+          </div>
+        </div>
+      </mat-accordion>
+    </div>
+    <div class="col-12">
+      <div
+        (click)="onAddEmploymentHistory()"
+        class="additional-employment-button d-flex align-content-center" style="margin-left: 40px;">
+        <span class="material-icons" style="font-size: 20px; padding-right: 5px;">
+          add
+        </span>
+         Add employment
+      </div>
+    </div>
+  </div>
+</div>
