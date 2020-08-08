@@ -1,3 +1,4 @@
+import { EmploymentHistory, ItemType, Education, Course } from './item.model';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -38,10 +39,29 @@ export class ResumeBuilderComponent implements OnInit {
     professionalSummary: new FormControl(null)
   });
 
+  employmentHistoryList: EmploymentHistory[] = [
+    new EmploymentHistory('Programator', 'CVS', new Date('08/07/2019'), new Date(), 'Suceava', 'WOW'),
+    new EmploymentHistory('Analyst', 'CVS', new Date(), new Date(), 'Suceava', 'WOW'),
+  ];
+  internshipList: EmploymentHistory[] = [
+    new EmploymentHistory('Intern', 'Arobs', new Date('08/07/2019'), new Date(), 'Suceava', 'WOW'),
+  ];
+
+  educationList: Education[] = [
+    new Education('USV', 'Bachelor Degree', new Date(), new Date(), 'Suceava', 'woffy')
+  ];
+  courseList: Course[] = [
+    new Course('Angular 2020', 'Udemy', new Date(), new Date())
+  ];
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getDummy() {
+    return new EmploymentHistory('Programator', 'CVS', new Date('08/07/2019'), new Date(), 'Suceava', 'WOW');
   }
 
   toggleAdditionalDetails() {

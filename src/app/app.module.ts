@@ -1,5 +1,5 @@
-import { EmploymentHistoryComponent } from './resumes/resume-builder/employment-history/employment-history.component';
-import { EmploymentHistoryItemComponent } from './resumes/resume-builder/employment-history/employment-history-item/employment-history-item.component';
+import { DragDropItemTemplateComponent } from './resumes/resume-builder/drag-drop-template/drag-drop-item-template/drag-drop-item-template.component';
+import { DragDropTemplateComponent } from './resumes/resume-builder/drag-drop-template/drag-drop-template.component';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -29,8 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     ResumeBuilderComponent,
     ResumeViewerComponent,
-    EmploymentHistoryComponent,
-    EmploymentHistoryItemComponent
+    DragDropTemplateComponent,
+    DragDropItemTemplateComponent
   ],
   imports: [
     BrowserModule,

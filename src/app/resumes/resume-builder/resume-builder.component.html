@@ -250,9 +250,43 @@
     <!-- <hr> -->
     <!-- Employment History -->
     <div class="row mat-elevation-z6 justify-content-center">
-      <app-employment-history></app-employment-history>
+      <app-drag-drop-template
+        [title]="'Employment History'"
+        [description]="'Whatever'"
+        [objectList]="employmentHistoryList"
+        [type]="'Employment History'"
+      >
+      </app-drag-drop-template>
     </div>
     <!-- END of Employment History -->
+    <hr />
+    <div class="row mat-elevation-z6 justify-content-center">
+      <app-drag-drop-template
+        [title]="'Education'"
+        [description]="'Whatever about education'"
+        [objectList]="educationList"
+        [type]="'Education'"
+      >
+      </app-drag-drop-template>
+    </div>
     <hr>
+    <div class="row mat-elevation-z6 justify-content-center">
+      <app-drag-drop-template
+        [title]="'Courses'"
+        [description]="'Whatever about courses'"
+        [objectList]="courseList"
+        [type]="'Course'"
+      >
+      </app-drag-drop-template>
+    </div>
+    <div class="row mat-elevation-z6 justify-content-center">
+      <app-drag-drop-template
+        [title]="'Internships'"
+        [description]="'Whatever about intrnships'"
+        [objectList]="internshipList"
+        [type]="'Internship'"
+      >
+      </app-drag-drop-template>
+    </div>
   </form>
 </div>
