@@ -1,1 +1,69 @@
-<p>auth works!</p>
+<app-header></app-header>
+<div
+  class="view"
+  style="
+    background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20190319184559-GettyImages-828485078.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  "
+>
+<div class="d-flex justify-content-center">
+  <div class="row">
+    <div class="col mat-elevation-z6 col-padding animated fadeInDown"  style="margin-top: 10em" data-wow-delay="1.3s">
+      <mat-spinner color="primary" *ngIf="loading"></mat-spinner>
+      <form
+        (ngSubmit)="onSubmit()"
+        [formGroup]="loginForm"
+        #f="ngForm"
+        *ngIf="!loading"
+      >
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="dum@gmail.com"
+              formControlName="email"
+              required
+            />
+            <mat-error>You must enter a valid email adress</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              required
+            />
+            <mat-error>You must enter a valid password</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+          <button
+            class="btn btn-success"
+            type="button"
+            (click)="onSignup()"
+            [disabled]="!loginForm.valid"
+          >
+            Signup
+          </button>
+          <span> | </span>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

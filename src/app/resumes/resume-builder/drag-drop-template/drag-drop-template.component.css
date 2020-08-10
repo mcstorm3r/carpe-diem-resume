@@ -1,0 +1,29 @@
+.container-fluid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.additional-employment-button {
+  font-weight: bold;
+  color: rgb(10, 125, 219);
+}
+
+.additional-employment-button:hover {
+  cursor: pointer;
+  color: rgb(10, 140, 247);
+}
+
+.grab-button {
+  cursor: grab;
+  color: #CCC;
+}
+
+.delete-button {
+  cursor: pointer;
+  color: #CCC;
+}
+
+.delete-button:hover, .grab-button:hover {
+  color: rgb(10, 140, 247);
+}
+

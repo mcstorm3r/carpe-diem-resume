@@ -1,0 +1,36 @@
+/* html,
+body,
+.container-fluid {
+  width: 100%;
+} */
+
+.photo-icon {
+  height: 100%;
+  font-size: 50px;
+}
+
+.padding{
+  padding-top: 2rem;
+  justify-content: center;
+  display: flex;
+}
+
+
+.additional-info-button {
+  font-weight: bold;
+  color: rgb(10, 125, 219);
+}
+
+.additional-info-button:hover {
+  cursor: pointer;
+  color: rgb(10, 140, 247);
+}
+
+.mat-form-field {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
+

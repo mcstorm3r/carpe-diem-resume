@@ -1,0 +1,26 @@
+
+.mat-form-field {
+  width: 100%;
+  flex-grow: 1;
+}
+mat-button-toggle-group {
+  width: 100%;
+  padding: 0;
+}
+
+
+.novice-btn:enabled {
+  background-color: red;
+}
+
+.beginner-btn:active {
+  background-color: orange;
+}
+
+mat-button-toggle {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+}

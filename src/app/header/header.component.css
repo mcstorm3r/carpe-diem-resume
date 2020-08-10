@@ -1,0 +1,20 @@
+b{
+  color: #FFF;
+}
+
+ b:hover {
+  color: #7D67D1;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 600px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #424f95 !important;
+  }
+}
+
+
+

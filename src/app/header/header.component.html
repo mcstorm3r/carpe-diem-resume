@@ -1,0 +1,33 @@
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark mat-elevation-z6">
+  <a class="navbar-brand" routerLink="/"><b>Carpe Diem</b></a>
+  <button
+    type="button"
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#navbarMenu"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarMenu">
+    <ul class="navbar-nav">
+      <li class="navbar-item">
+        <a class="nav-link" routerLink="/resumes"> <b>Resumes</b> </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="navbar-item">
+        <a
+          class="nav-link"
+          (click)="logout()"
+          *ngIf="isAuthenticated"
+          style="cursor: pointer;"
+        >
+          <b>Logout</b>
+        </a>
+        <a class="nav-link" routerLink="/auth" *ngIf="!isAuthenticated">
+          <b>Login</b>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
