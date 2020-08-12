@@ -17,10 +17,7 @@
     </div>
     <!-- END of Name Section -->
     <!-- Personal Details Section -->
-    <div
-      class="row mat-elevation-z6 justify-content-center"
-      formGroupName="personalDetails"
-    >
+    <div class="row mat-elevation-z6 justify-content-center" formGroupName="personalDetails">
       <div class="col-12">
         <h3 class="font-weight-bold">Personal Details</h3>
       </div>
@@ -29,13 +26,7 @@
         <mat-form-field>
           <br />
           <mat-label>Job Title</mat-label>
-          <input
-            type="text"
-            matInput
-            id="jobTitle"
-            formControlName="jobTitle"
-            placeholder="e.g Engineer"
-          />
+          <input type="text" matInput id="jobTitle" formControlName="jobTitle" placeholder="e.g Engineer" />
         </mat-form-field>
       </div>
       <!-- END of Job Title -->
@@ -56,26 +47,14 @@
       <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
         <mat-form-field>
           <br />
-          <input
-            type="text"
-            matInput
-            id="firstname"
-            formControlName="firstname"
-            placeholder="First Name"
-            [(ngModel)]="firstname"
-          />
+          <input type="text" matInput id="firstname" formControlName="firstname" placeholder="First Name"
+            [(ngModel)]="firstname" />
         </mat-form-field>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
         <mat-form-field>
           <br />
-          <input
-            type="text"
-            matInput
-            formControlName="lastname"
-            placeholder="Last Name"
-            [(ngModel)]="lastname"
-          />
+          <input type="text" matInput formControlName="lastname" placeholder="Last Name" [(ngModel)]="lastname" />
         </mat-form-field>
       </div>
       <!-- END of First and Last Name -->
@@ -84,12 +63,7 @@
         <mat-form-field>
           <br />
           <mat-label>Email</mat-label>
-          <input
-            type="email"
-            matInput
-            formControlName="email"
-            placeholder="dum@gmail.com"
-          />
+          <input type="email" matInput formControlName="email" placeholder="dum@gmail.com" />
         </mat-form-field>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
@@ -141,11 +115,7 @@
                 <mat-form-field>
                   <br />
                   <mat-label>Driving License</mat-label>
-                  <input
-                    type="text"
-                    matInput
-                    formControlName="drivingLicense"
-                  />
+                  <input type="text" matInput formControlName="drivingLicense" />
                 </mat-form-field>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
@@ -167,16 +137,8 @@
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 padding">
                 <mat-form-field color="primary">
                   <br />
-                  <input
-                    matInput
-                    [matDatepicker]="picker1"
-                    formControlName="dateOfBirth"
-                    placeholder="Choose a Date"
-                  />
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="picker1"
-                  ></mat-datepicker-toggle>
+                  <input matInput [matDatepicker]="picker1" formControlName="dateOfBirth" placeholder="Choose a Date" />
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
               </div>
@@ -186,12 +148,8 @@
         </div>
       </div>
       <div class="col-12 padding">
-        <div
-          (click)="toggleAdditionalDetails()"
-          class="additional-info-button padding"
-          data-toggle="collapse"
-          data-target="#additionalDetails"
-        >
+        <div (click)="toggleAdditionalDetails()" class="additional-info-button padding" data-toggle="collapse"
+          data-target="#additionalDetails">
           {{ ifAdditionalDetails ? "Hide" : "Edit" }} additional details
           <span class="material-icons">
             {{
@@ -209,16 +167,11 @@
         <h3 class="font-weight-bold">Proffesional Summary</h3>
       </div>
       <div class="col-12">
-        <mat-hint
-          >Include 2-3 clear sentences about your overall experience</mat-hint
-        >
+        <mat-hint>Include 2-3 clear sentences about your overall experience</mat-hint>
         <mat-form-field class="full-width">
           <mat-label>Summary</mat-label>
-          <textarea
-            rows="10"
-            matInput
-            placeholder="e.g Passionate engineer with 5+ years of experience and ..."
-          ></textarea>
+          <textarea rows="10" matInput
+            placeholder="e.g Passionate engineer with 5+ years of experience and ..."></textarea>
         </mat-form-field>
       </div>
     </div>
@@ -249,44 +202,63 @@
     <!-- END of Employment History -->
     <!-- <hr> -->
     <!-- Employment History -->
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template
-        [title]="'Employment History'"
-        [description]="'Whatever'"
-        [objectList]="employmentHistoryList"
-        [type]="'Employment History'"
-      >
-      </app-drag-drop-template>
-    </div>
-    <!-- END of Employment History -->
-    <hr />
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template
-        [title]="'Education'"
-        [description]="'Whatever about education'"
-        [objectList]="educationList"
-        [type]="'Education'"
-      >
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template
-        [title]="'Courses'"
-        [description]="'Whatever about courses'"
-        [objectList]="courseList"
-        [type]="'Course'"
-      >
-      </app-drag-drop-template>
-    </div>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template
-        [title]="'Internships'"
-        [description]="'Whatever about intrnships'"
-        [objectList]="internshipList"
-        [type]="'Internship'"
-      >
-      </app-drag-drop-template>
+    <div *ngFor="let section of sections">
+      <div class="row mat-elevation-z6 justify-content-start">
+        <app-drag-drop-template [title]="section.title" [description]="section.description" class="w-100"
+          [objectList]="section.objectList" [type]="section.type" (addItem)="onAddItem($event)">
+        </app-drag-drop-template>
+      </div>
+      <hr />
     </div>
   </form>
+  <hr>
+
+  <!-- Custom Section -->
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h3 class="font-weight-bold">Add Section</h3>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">tune</span>
+        <span class="p-2 add-section-button" (click)="onAddSection('CUSTOM')"> Custom Section</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">grass</span>
+        <span class="p-2 add-section-button">Extra-curricular Activities</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >description</span>
+        <span class="p-2 add-section-button">Courses</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >work_outline</span>
+        <span class="p-2 add-section-button">Interships</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >pedal_bike</span>
+        <span class="p-2 add-section-button">Hobbies</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">translate</span>
+        <span class="p-2 add-section-button">Languages</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >link</span>
+        <span class="p-2 add-section-button">References</span>
+      </div>
+    </div>
+  <!-- END of Custom Section -->
 </div>

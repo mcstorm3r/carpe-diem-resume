@@ -11,6 +11,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   imports: [
@@ -26,6 +28,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatTooltipModule,
     MatExpansionModule,
     DragDropModule,
+    MatSelectModule,
+    MatButtonToggleModule,
   ],
   exports: [
     MatTabsModule,
@@ -40,6 +44,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatTooltipModule,
     MatExpansionModule,
     DragDropModule,
+    MatSelectModule,
+    MatButtonToggleModule,
   ],
 })
 export class MaterialModule {}

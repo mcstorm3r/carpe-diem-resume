@@ -1,3 +1,12 @@
+export class Section {
+  constructor(
+    public title: string,
+    public description: string,
+    public type: string,
+    public objectList: ItemType[]
+  ) {}
+}
+
 export class EmploymentHistory {
   constructor(
     public jobTitle: string,
@@ -43,9 +52,34 @@ export class Hobbies {
   constructor(public description: string) {}
 }
 
+export class WebsitesAndSocialLinks {
+  constructor(public label: string, public link: string) {}
+}
+
+export class Language {
+  constructor(public language: string, public level: string) {}
+}
+
+export class References {
+  constructor(
+    public referentName: string,
+    public company: string,
+    public phone: string,
+    public email: string
+  ) {}
+}
+
+export class Skill {
+  constructor(public skill: string, public level: string) {}
+}
+
 export type ItemType =
   | EmploymentHistory
   | Education
   | Untitled
   | Course
+  | Language
+  | References
+  | Skill
+  | WebsitesAndSocialLinks
   | Hobbies;

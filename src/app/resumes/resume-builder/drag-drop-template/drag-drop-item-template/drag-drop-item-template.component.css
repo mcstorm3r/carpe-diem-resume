@@ -1,8 +1,23 @@
-.container-fluid {
-  width: 100%;
-  margin: 0;
-}
 
 .mat-form-field {
   width: 100%;
+  flex-grow: 1;
+}
+
+mat-expanstion-panel {
+  width: 100%;
+}
+
+mat-button-toggle {
+  text-align: start;
+  border: 1px solid #CCC;
+}
+
+
+mat-button-toggle {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
 }

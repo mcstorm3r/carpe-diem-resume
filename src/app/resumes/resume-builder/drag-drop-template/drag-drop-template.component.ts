@@ -1,6 +1,6 @@
-import { EmploymentHistory, ItemType } from '../item.model';
+import { ItemType, EmploymentHistory, Hobbies, Course } from './../item.model';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-drag-drop-template',
@@ -13,6 +13,7 @@ export class DragDropTemplateComponent implements OnInit {
   @Input() description: string;
   @Input() type: string;
   @Input() objectList: ItemType[];
+  @Output() addItem = new EventEmitter<string>();
 
 
 
@@ -21,12 +22,13 @@ export class DragDropTemplateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  drop(event: CdkDragDrop<EmploymentHistory[]>) {
+  drop(event: CdkDragDrop<ItemType[]>) {
     moveItemInArray(this.objectList, event.previousIndex, event.currentIndex);
+    console.log(this.objectList);
   }
 
-  onAddEmploymentHistory() {
-    this.objectList.push( new EmploymentHistory('(Not specified)', '', new Date(), new Date(), '', ''));
+  onAddItem() {
+    this.addItem.emit(this.type);
   }
 
   onDelete(empHistory) {

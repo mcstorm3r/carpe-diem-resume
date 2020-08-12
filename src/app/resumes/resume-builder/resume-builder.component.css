@@ -16,15 +16,20 @@ body,
 }
 
 
-.additional-info-button {
+.additional-info-button, .add-section-button {
   font-weight: bold;
   color: rgb(10, 125, 219);
 }
 
-.additional-info-button:hover {
+.additional-info-button:hover, .add-section-button:hover {
   cursor: pointer;
   color: rgb(10, 140, 247);
 }
+
+.add-section-icon {
+  font-size: 3rem;
+}
+
 
 .mat-form-field {
   width: 75%;
@@ -33,4 +38,6 @@ body,
 .full-width {
   width: 100%;
 }
+
+
 

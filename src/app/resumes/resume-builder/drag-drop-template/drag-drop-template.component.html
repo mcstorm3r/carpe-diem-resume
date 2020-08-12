@@ -1,5 +1,5 @@
 <div class="container-fluid p-2">
-  <div class="row">
+  <div class="row full-width">
     <div class="col-12">
       <h3 class="font-weight-bold">{{ title }}</h3>
     </div>
@@ -14,8 +14,7 @@
               <div class="row">
                 <div class="mt-3 col-1 p-0 m-0" style="text-align: end;">
                   <span
-                    class="material-icons"
-                    style="cursor: grab;"
+                    class="material-icons grab-button"
                     matTooltip="Grab, hold and drag."
                     matTooltipPosition="above"
                   >
@@ -23,42 +22,16 @@
                   </span>
                 </div>
                 <div class="col-11 p-0 m-0">
-                  <div [ngSwitch]="type">
-                    <div *ngSwitchCase="'Employment History'">
+                  <div>
                       <app-drag-drop-item-template [type]="type" [item]="object">
                       </app-drag-drop-item-template>
-                    </div>
-                    <div *ngSwitchCase="'Education'">
-                      <app-drag-drop-item-template [type]="type" [item]="object">
-                      </app-drag-drop-item-template>
-                    </div>
-                    <div *ngSwitchCase="'Course'">
-                      <app-drag-drop-item-template [type]="type" [item]="object">
-                      </app-drag-drop-item-template>
-                    </div>
-                    <div *ngSwitchCase="'Untitled'">
-                      <app-drag-drop-item-template [type]="type" [item]="object">
-                      </app-drag-drop-item-template>
-                    </div>
-                    <div *ngSwitchCase="'Internship'">
-                      <app-drag-drop-item-template [type]="type" [item]="object">
-                      </app-drag-drop-item-template>
-                    </div>
-                    <div *ngSwitchCase="'Extra-curricular'">
-                      <app-drag-drop-item-template [type]="type" [item]="object">
-                      </app-drag-drop-item-template>
-                    </div>
-
-
-                    <div *ngSwitchDefault>(Not Specified)</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-1 mt-2 p-1">
+            <div class="col-1 mt-3 p-1">
               <span
-                class="material-icons"
-                style="cursor: pointer;"
+                class="material-icons delete-button"
                 matTooltip="Delete"
                 matTooltipPosition="above"
                 (click)="onDelete(object)"
@@ -72,7 +45,7 @@
     </div>
     <div class="col-12">
       <div
-        (click)="onAddEmploymentHistory()"
+        (click)="onAddItem()"
         class="additional-employment-button d-flex align-content-center"
         style="margin-left: 40px;"
       >
@@ -82,7 +55,7 @@
         >
           add
         </span>
-        Add {{ type }}
+        Add {{ type.toLocaleLowerCase() }}
       </div>
     </div>
   </div>

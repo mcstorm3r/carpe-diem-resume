@@ -1,5 +1,6 @@
 .container-fluid {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .additional-employment-button {
@@ -11,3 +12,22 @@
   cursor: pointer;
   color: rgb(10, 140, 247);
 }
+
+.grab-button {
+  cursor: grab;
+  color: #CCC;
+}
+
+.grab-button:active {
+cursor: grabbing;
+}
+
+.delete-button {
+  cursor: pointer;
+  color: #CCC;
+}
+
+.delete-button:hover, .grab-button:hover {
+  color: rgb(10, 140, 247);
+}
+

@@ -4,6 +4,10 @@ import {
   Education,
   Untitled,
   Course,
+  WebsitesAndSocialLinks,
+  Language,
+  References,
+  Skill,
 } from '../../item.model';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
@@ -22,8 +26,27 @@ export class DragDropItemTemplateComponent implements OnInit {
   startDate: string = null;
   endDate: string = null;
   description: string = null;
+  languageLevel: string = null;
+  phone: string = null;
+  email: string = null;
+  skillLevel: string = null;
+
   titleOrNameLabelText: string = null;
   degreeOrEmployerLabelText: string = null;
+
+  languageLevelList: string[] = [
+    'Native speaker',
+    'Highly proeficient',
+    'Very good command',
+    'Good working knowledge',
+    'Working knowledge',
+    'C2',
+    'C1',
+    'B2',
+    'B1',
+    'A2',
+    'A1',
+  ];
 
   empHistoryForm: FormGroup;
   constructor() {}
@@ -38,27 +61,41 @@ export class DragDropItemTemplateComponent implements OnInit {
 
   initCustomForm() {
     switch (this.type) {
-      case 'Employment History':
+      case 'EMPLOYMENT':
         this.initEmploymentHistoryForm();
         break;
-      case 'Education':
+      case 'EDUCATION':
         this.initEducationForm();
         break;
-      case 'Untitled':
+      case 'UNTITLED':
         this.initUntitledForm();
         break;
-      case 'Course':
+      case 'COURSE':
         this.initCourseForm();
         break;
-      case 'Internship':
+      case 'INTERNSHIP':
         this.initEmploymentHistoryForm();
         break;
-      case 'Extra-curricular':
+      case 'EXTRA-CURRICULAR':
         this.initEmploymentHistoryForm();
         this.setInputLabelText('Function Title', 'Employer');
         break;
+      case 'LINK':
+        this.initWebsiteAndSocialLinksForm();
+        break;
+      case 'LANGUAGE':
+        this.initLanguageForm();
+        break;
+      case 'REFERENCE':
+        this.initReferencesForm();
+        break;
+      case 'SKILL':
+        this.initSkillForm();
+        break;
     }
   }
+
+  // Init custom form section
 
   initEmploymentHistoryForm() {
     this.setCustomFormControls(
@@ -67,7 +104,11 @@ export class DragDropItemTemplateComponent implements OnInit {
       'city',
       'startDate',
       'endDate',
-      'description'
+      'description',
+      null,
+      null,
+      null,
+      null
     );
     this.setInputLabelText('Job Title', 'Employer');
     this.empHistoryForm = new FormGroup({
@@ -88,7 +129,11 @@ export class DragDropItemTemplateComponent implements OnInit {
       'city',
       'startDate',
       'endDate',
-      'description'
+      'description',
+      null,
+      null,
+      null,
+      null
     );
     this.setInputLabelText('Activity name,job title, book title, etc.', null);
     this.empHistoryForm = new FormGroup({
@@ -108,7 +153,11 @@ export class DragDropItemTemplateComponent implements OnInit {
       'city',
       'startDate',
       'endDate',
-      'description'
+      'description',
+      null,
+      null,
+      null,
+      null
     );
     this.setInputLabelText('School', 'Degree');
     this.empHistoryForm = new FormGroup({
@@ -129,6 +178,10 @@ export class DragDropItemTemplateComponent implements OnInit {
       null,
       'startDate',
       'endDate',
+      null,
+      null,
+      null,
+      null,
       null
     );
     this.setInputLabelText('Course', 'Institution');
@@ -141,7 +194,96 @@ export class DragDropItemTemplateComponent implements OnInit {
     this.setCourseFormValues(this.item as Course);
   }
 
+  initWebsiteAndSocialLinksForm() {
+    this.setCustomFormControls(
+      'label',
+      'link',
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    );
+    this.setInputLabelText('Label', 'Link');
+    this.empHistoryForm = new FormGroup({
+      [this.titleOrName]: new FormControl(null),
+      [this.degreeOrEmployer]: new FormControl(null),
+    });
+    this.setWebsiteAndSocialLinksFormValues(
+      this.item as WebsitesAndSocialLinks
+    );
+  }
 
+  initLanguageForm() {
+    this.setCustomFormControls(
+      'language',
+      null,
+      null,
+      null,
+      null,
+      null,
+      'level',
+      null,
+      null,
+      null
+    );
+    this.setInputLabelText('Language', null);
+    this.empHistoryForm = new FormGroup({
+      [this.titleOrName]: new FormControl(null),
+      [this.languageLevel]: new FormControl(null),
+    });
+    this.setLanguageFormValues(this.item as Language);
+  }
+
+  initReferencesForm() {
+    this.setCustomFormControls(
+      'referentName',
+      'company',
+      null,
+      null,
+      null,
+      null,
+      null,
+      'phone',
+      'email',
+      null
+    );
+    this.setInputLabelText('Referent\'s Full Name', 'Company');
+    this.empHistoryForm = new FormGroup({
+      [this.titleOrName]: new FormControl(null),
+      [this.degreeOrEmployer]: new FormControl(null),
+      [this.phone]: new FormControl(null),
+      [this.email]: new FormControl(null),
+    });
+    this.setReferencesFormValues(this.item as References);
+  }
+
+  initSkillForm() {
+    this.setCustomFormControls(
+      'skill',
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      'level'
+    );
+    this.setInputLabelText('Skill', null);
+    this.empHistoryForm = new FormGroup({
+      [this.titleOrName]: new FormControl(null),
+      [this.skillLevel]: new FormControl(null),
+    });
+    this.setSkillFormValues(this.item as Skill);
+  }
+
+
+  // End of init section
 
   setCustomFormControls(
     titleOrName: string,
@@ -149,7 +291,11 @@ export class DragDropItemTemplateComponent implements OnInit {
     city: string,
     startDate: string,
     endDate: string,
-    description: string
+    description: string,
+    languageLevel: string,
+    phone: string,
+    email: string,
+    skillLevel: string
   ) {
     this.titleOrName = titleOrName;
     this.degreeOrEmployer = degreeOrEmployer;
@@ -157,6 +303,10 @@ export class DragDropItemTemplateComponent implements OnInit {
     this.startDate = startDate;
     this.endDate = endDate;
     this.description = description;
+    this.languageLevel = languageLevel;
+    this.phone = phone;
+    this.email = email;
+    this.skillLevel = skillLevel;
   }
 
   setInputLabelText(titleText: string, empText: string) {
@@ -175,7 +325,6 @@ export class DragDropItemTemplateComponent implements OnInit {
     });
   }
 
-
   setEducationFormValues(item: Education) {
     this.empHistoryForm.setValue({
       [this.titleOrName]: item.school,
@@ -193,7 +342,7 @@ export class DragDropItemTemplateComponent implements OnInit {
       [this.city]: item.city,
       [this.startDate]: item.startDate,
       [this.endDate]: item.endDate,
-      [this.description]: item.description
+      [this.description]: item.description,
     });
   }
   setCourseFormValues(item: Course) {
@@ -202,6 +351,36 @@ export class DragDropItemTemplateComponent implements OnInit {
       [this.degreeOrEmployer]: item.institution,
       [this.startDate]: item.startDate,
       [this.endDate]: item.endDate,
+    });
+  }
+
+  setWebsiteAndSocialLinksFormValues(item: WebsitesAndSocialLinks) {
+    this.empHistoryForm.setValue({
+      [this.titleOrName]: item.label,
+      [this.degreeOrEmployer]: item.link,
+    });
+  }
+
+  setLanguageFormValues(item: Language) {
+    this.empHistoryForm.setValue({
+      [this.titleOrName]: item.language,
+      [this.languageLevel]: item.level,
+    });
+  }
+
+  setReferencesFormValues(item: References) {
+    this.empHistoryForm.setValue({
+      [this.titleOrName]: item.referentName,
+      [this.degreeOrEmployer]: item.company,
+      [this.phone]: item.phone,
+      [this.email]: item.email,
+    });
+  }
+
+  setSkillFormValues(item: Skill) {
+    this.empHistoryForm.setValue({
+      [this.titleOrName]: item.skill,
+      [this.skillLevel]: item.level,
     });
   }
 
