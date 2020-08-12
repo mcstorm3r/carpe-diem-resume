@@ -62,35 +62,35 @@ export class DragDropItemTemplateComponent implements OnInit {
 
   initCustomForm() {
     switch (this.type) {
-      case 'Employment History':
+      case 'EMPLOYMENT':
         this.initEmploymentHistoryForm();
         break;
-      case 'Education':
+      case 'EDUCATION':
         this.initEducationForm();
         break;
-      case 'Untitled':
+      case 'UNTITLED':
         this.initUntitledForm();
         break;
-      case 'Course':
+      case 'COURSE':
         this.initCourseForm();
         break;
-      case 'Internship':
+      case 'INTERNSHIP':
         this.initEmploymentHistoryForm();
         break;
-      case 'Extra-curricular':
+      case 'EXTRA-CURRICULAR':
         this.initEmploymentHistoryForm();
         this.setInputLabelText('Function Title', 'Employer');
         break;
-      case 'link':
+      case 'LINK':
         this.initWebsiteAndSocialLinksForm();
         break;
-      case 'language':
+      case 'LANGUAGE':
         this.initLanguageForm();
         break;
-      case 'reference':
+      case 'REFERENCE':
         this.initReferencesForm();
         break;
-      case 'skill':
+      case 'SKILL':
         this.initSkillForm();
         break;
     }

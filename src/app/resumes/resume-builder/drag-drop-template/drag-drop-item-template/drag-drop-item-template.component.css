@@ -3,19 +3,16 @@
   width: 100%;
   flex-grow: 1;
 }
-mat-button-toggle-group {
+
+mat-expanstion-panel {
   width: 100%;
-  padding: 0;
 }
 
-
-.novice-btn:enabled {
-  background-color: red;
+mat-button-toggle {
+  text-align: start;
+  border: 1px solid #CCC;
 }
 
-.beginner-btn:active {
-  background-color: orange;
-}
 
 mat-button-toggle {
   flex: 1 1 100%;

@@ -18,6 +18,10 @@
   color: #CCC;
 }
 
+.grab-button:active {
+cursor: grabbing;
+}
+
 .delete-button {
   cursor: pointer;
   color: #CCC;

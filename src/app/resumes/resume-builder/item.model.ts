@@ -1,3 +1,12 @@
+export class Section {
+  constructor(
+    public title: string,
+    public description: string,
+    public type: string,
+    public objectList: ItemType[]
+  ) {}
+}
+
 export class EmploymentHistory {
   constructor(
     public jobTitle: string,

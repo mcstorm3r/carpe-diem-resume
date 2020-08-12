@@ -36,45 +36,24 @@
                 <mat-form-field>
                   <br />
                   <mat-label>{{ degreeOrEmployerLabelText }}</mat-label>
-                  <input
-                    type="text"
-                    matInput
-                    [formControlName]="degreeOrEmployer"
-                  />
+                  <input type="text" matInput [formControlName]="degreeOrEmployer" />
                 </mat-form-field>
               </div>
               <!-- END of JOB AND EMPLOYER -->
 
-              <div
-                class="col-sm-6 col-md-3 col-lg-3 col-xl-3"
-                *ngIf="startDate"
-              >
+              <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3" *ngIf="startDate">
                 <mat-form-field appearance="fill">
                   <mat-label>Start Date</mat-label>
-                  <input
-                    matInput
-                    [matDatepicker]="startDateId"
-                    [formControlName]="startDate"
-                  />
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="startDateId"
-                  ></mat-datepicker-toggle>
+                  <input matInput [matDatepicker]="startDateId" [formControlName]="startDate" />
+                  <mat-datepicker-toggle matSuffix [for]="startDateId"></mat-datepicker-toggle>
                   <mat-datepicker #startDateId></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3" *ngIf="endDate">
                 <mat-form-field appearance="fill">
                   <mat-label>End Date</mat-label>
-                  <input
-                    matInput
-                    [matDatepicker]="endDateId"
-                    [formControlName]="endDate"
-                  />
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="endDateId"
-                  ></mat-datepicker-toggle>
+                  <input matInput [matDatepicker]="endDateId" [formControlName]="endDate" />
+                  <mat-datepicker-toggle matSuffix [for]="endDateId"></mat-datepicker-toggle>
                   <mat-datepicker #endDateId></mat-datepicker>
                 </mat-form-field>
               </div>
@@ -89,13 +68,8 @@
                 <mat-form-field>
                   <br />
                   <mat-label>Description</mat-label>
-                  <textarea
-                    rows="4"
-                    type="text"
-                    matInput
-                    [formControlName]="description"
-                    placeholder="Write something about your job there."
-                  ></textarea>
+                  <textarea rows="4" type="text" matInput [formControlName]="description"
+                    placeholder="Write something about your job there."></textarea>
                 </mat-form-field>
               </div>
               <div class="col-md-6 col-lg-6 col-xl-6" *ngIf="languageLevel">
@@ -103,10 +77,7 @@
                   <br />
                   <mat-label>Level</mat-label>
                   <mat-select [formControlName]="languageLevel">
-                    <mat-option
-                      *ngFor="let level of languageLevelList"
-                      [value]="level"
-                    >
+                    <mat-option *ngFor="let level of languageLevelList" [value]="level">
                       {{ level }}
                     </mat-option>
                   </mat-select>
@@ -126,17 +97,25 @@
                   <input type="email" matInput [formControlName]="email" />
                 </mat-form-field>
               </div>
-              <div class="col-md-6 col-lg-6 col-xl-6" *ngIf="skillLevel">
-                <!-- <div>
-                  <mat-button-toggle-group [formControlName]="skillLevel">
-                    <mat-button-toggle class="novice-btn" value="Novice">Novice</mat-button-toggle>
-                    <mat-button-toggle class="beginner-btn" value="Beginner">Beginner</mat-button-toggle>
-                    <mat-button-toggle class="skillful-btn" value="Skillful">Skillful</mat-button-toggle>
-                    <mat-button-toggle class="experienced-btn" value="Experienced">Experienced</mat-button-toggle>
-                    <mat-button-toggle class="expert-btn" value="Expert">Expert</mat-button-toggle>
-                  </mat-button-toggle-group>
-                </div> -->
-              </div>
+              <mat-button-toggle-group [formControlName]="skillLevel" class="col-md-6 col-lg-6 col-xl-6"
+                *ngIf="skillLevel">
+                <div class="container-fluid">
+                  <div class="row d-flex flex-wrap">
+                    <mat-button-toggle class="col-3 p-0" value="Beginner">Beginner</mat-button-toggle>
+
+
+                    <mat-button-toggle class="col-3 p-0" value="Skillful">Skillful</mat-button-toggle>
+
+
+                    <mat-button-toggle class="col-3 p-0" value="Experienced">Experienced</mat-button-toggle>
+
+
+                    <mat-button-toggle class="col-3 p-0" value="Expert">Expert</mat-button-toggle>
+
+                  </div>
+                </div>
+
+              </mat-button-toggle-group>
               <!-- <div class="col-6"><button class="btn-secondary btn" type="submit">Submit</button></div> -->
             </div>
           </form>

@@ -202,53 +202,63 @@
     <!-- END of Employment History -->
     <!-- <hr> -->
     <!-- Employment History -->
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Employment History'" [description]="'Whatever'"
-        [objectList]="employmentHistoryList" [type]="'Employment History'">
-      </app-drag-drop-template>
-    </div>
-    <!-- END of Employment History -->
-    <hr />
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Education'" [description]="'Whatever about education'"
-        [objectList]="educationList" [type]="'Education'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Courses'" [description]="'Whatever about courses'" [objectList]="courseList"
-        [type]="'Course'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Internships'" [description]="'Whatever about intrnships'"
-        [objectList]="internshipList" [type]="'Internship'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Websites & Social Links'" [description]="'Whatever about links'"
-        [objectList]="websiteAndSocialLinksList" [type]="'link'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Language'" [description]="'Whatever about language'"
-        [objectList]="languageList" [type]="'language'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'References'" [description]="'Whatever about references'"
-        [objectList]="referenceList" [type]="'reference'">
-      </app-drag-drop-template>
-    </div>
-    <hr>
-    <div class="row mat-elevation-z6 justify-content-center">
-      <app-drag-drop-template [title]="'Skills'" [description]="'Whatever about skilsl'"
-        [objectList]="skillList" [type]="'skill'">
-      </app-drag-drop-template>
+    <div *ngFor="let section of sections">
+      <div class="row mat-elevation-z6 justify-content-start">
+        <app-drag-drop-template [title]="section.title" [description]="section.description" class="w-100"
+          [objectList]="section.objectList" [type]="section.type" (addItem)="onAddItem($event)">
+        </app-drag-drop-template>
+      </div>
+      <hr />
     </div>
   </form>
+  <hr>
+
+  <!-- Custom Section -->
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h3 class="font-weight-bold">Add Section</h3>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">tune</span>
+        <span class="p-2 add-section-button" (click)="onAddSection('CUSTOM')"> Custom Section</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">grass</span>
+        <span class="p-2 add-section-button">Extra-curricular Activities</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >description</span>
+        <span class="p-2 add-section-button">Courses</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >work_outline</span>
+        <span class="p-2 add-section-button">Interships</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >pedal_bike</span>
+        <span class="p-2 add-section-button">Hobbies</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon">translate</span>
+        <span class="p-2 add-section-button">Languages</span>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <div class="d-flex align-items-center">
+        <span class="material-icons d-flex align-items-center add-section-icon" >link</span>
+        <span class="p-2 add-section-button">References</span>
+      </div>
+    </div>
+  <!-- END of Custom Section -->
 </div>

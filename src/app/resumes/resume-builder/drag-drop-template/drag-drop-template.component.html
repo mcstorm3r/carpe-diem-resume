@@ -45,7 +45,7 @@
     </div>
     <div class="col-12">
       <div
-        (click)="onAddEmploymentHistory()"
+        (click)="onAddItem()"
         class="additional-employment-button d-flex align-content-center"
         style="margin-left: 40px;"
       >
@@ -55,7 +55,7 @@
         >
           add
         </span>
-        Add {{ type }}
+        Add {{ type.toLocaleLowerCase() }}
       </div>
     </div>
   </div>
